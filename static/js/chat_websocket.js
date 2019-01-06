@@ -13,10 +13,11 @@ if(loc.protocol=='https:'){
 var endpoint = wsStart + loc.host + loc.pathname
 
 //var socket=new ReconnectingWebSocket(endpoint)
+
 var socket=new ReconnectingWebSocket(endpoint)
 //socket.debug = true;
 //socket.timeoutInterval = 5400;
-//automaticOpen=false
+//socket.automaticOpen=false
 
 socket.onmessage=function(e){
     console.log("message",e)
@@ -30,6 +31,7 @@ console.log('data='+e.data)
 
 }
 socket.onopen=function(e){
+
     console.log("open",e)
     formData.submit(function(event){
         event.preventDefault()
@@ -48,9 +50,7 @@ socket.onopen=function(e){
 }
 socket.onerror=function(e){
     console.log("error",e)
-
 }
 socket.onclose=function(e){
     console.log("close",e)
-
 }

@@ -106,8 +106,8 @@ CHANNEL_LAYERS={
     'default': {
         'BACKEND': 'channels_redis.core.RedisChannelLayer',
         'CONFIG': {
-            "hosts": [('127.0.0.1',6379)],
-            # "hosts": [('redis://:password@redis-10616.c82.us-east-1-2.ec2.cloud.redislabs.com:10616')],
+            # "hosts": [('127.0.0.1',6379)],
+            "hosts": [('redis://:b9u7JRrvqsC05uMvXxnCHNEYA4w08iqH@redis-10616.c82.us-east-1-2.ec2.cloud.redislabs.com:10616')],
         },
     },
 }
@@ -142,14 +142,14 @@ TEMPLATES = [
 # Database
 # https://docs.djangoproject.com/en/2.1/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    }
-}
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+#     }
+# }
 
-# DATABASES = {'default': dj_database_url.config(default='postgres://rwezlyjpnxanmx:4a399b4f88e2f9a60f772193d8084f960ba41e3be275b016d04e559ec71b394f@ec2-54-235-178-189.compute-1.amazonaws.com:5432/dea329m486kgsf')}
+DATABASES = {'default': dj_database_url.config(default='postgres://musnkcilwpwbbl:5c2ddeed6ca255fae1c6b03960bb02ff393fe0312e1401eed4a2b3c9278759de@ec2-174-129-18-247.compute-1.amazonaws.com:5432/d54s57v1g84i5s')}
 
 
 

@@ -38,6 +38,8 @@ class ChatConsumer(AsyncConsumer):
                 username=user.username
             myResponse={'message':msg,'username':username}
 
+            await self.create_chat_message(user, msg)
+
             await self.channel_layer.group_send(
                 self.chat_room,
                 {
@@ -45,7 +47,7 @@ class ChatConsumer(AsyncConsumer):
                     "text": json.dumps(myResponse)
                 }
             )
-            await self.create_chat_message(user,msg)
+
             # print(json.dumps(myResponse))
 
     async def chat_message(self,event):
