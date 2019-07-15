@@ -91,7 +91,7 @@ SESSION_COOKIE_AGE = 60 * 60 * 24 * 30 # One month (defined in seconds)
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
-    'whitenoise.middleware.WhiteNoiseMiddleware',
+    # 'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -143,14 +143,14 @@ TEMPLATES = [
 # Database
 # https://docs.djangoproject.com/en/2.1/ref/settings/#databases
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-#     }
-# }
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+    }
+}
 
-DATABASES = {'default': dj_database_url.config(default='postgres://musnkcilwpwbbl:5c2ddeed6ca255fae1c6b03960bb02ff393fe0312e1401eed4a2b3c9278759de@ec2-174-129-18-247.compute-1.amazonaws.com:5432/d54s57v1g84i5s')}
+# DATABASES = {'default': dj_database_url.config(default='postgres://musnkcilwpwbbl:5c2ddeed6ca255fae1c6b03960bb02ff393fe0312e1401eed4a2b3c9278759de@ec2-174-129-18-247.compute-1.amazonaws.com:5432/d54s57v1g84i5s')}
 
 
 
