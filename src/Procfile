@@ -1,0 +1,1 @@
+web: gunicorn myapp_allauth_users.asgi --log-file -
